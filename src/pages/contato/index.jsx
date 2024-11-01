@@ -78,7 +78,8 @@ export default function Contato() {
 
           <textarea className="msg" placeholder="Deixe sua mensagem (opcional)" rows="4"
           value={mensagem} onChange={(e) => setMensagem(e.target.value)}></textarea>
-          <button type="button" className='enviar' onClick={enviar}>Enviar</button>
+
+          <button type="button" className='enviar'>Enviar</button>
         </div>
         <div className="dir">
           <img src="/assets/images/odc-min.png" alt="" />
