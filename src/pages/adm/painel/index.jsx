@@ -20,7 +20,7 @@
     return (
       <div className="painel">
         <Cabecalho_ADM />
-        <Link to="/">
+        <Link to="/adm-login">
           <button type="button" className='voltar'><IoChevronBackOutline />Log Out</button>
         </Link>
         <h1 className='Nome'>Olá, --Nome Funcionário--!</h1> 

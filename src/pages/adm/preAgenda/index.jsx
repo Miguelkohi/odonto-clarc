@@ -4,22 +4,23 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import FooterADM from '../../../components/footerAdm/index.jsx';
 import { IoChevronBackOutline } from "react-icons/io5";
-
-const agendamentos = [
-  { nome: "João Silva", telefone: "5511914817025", horario: "10:00", data: "2024-10-29" },
-  { nome: "Maria Oliveira", telefone: "5511914817025", horario: "11:00", data: "2024-10-30" },
-  { nome: "Pedro Santos", telefone: "5511998399386", horario: "14:00", data: "2024-10-29" },
-];
+import axios from 'axios';
 
 export default function PreAgenda() {
-  const [minDate, setMinDate] = useState('');
+  const [preAgendamentos, setPreAgendamentos] = useState([]);
 
   useEffect(() => {
-    const today = new Date().toISOString().split('T')[0];
-    setMinDate(today);
+    buscarPreAgendamentos();
   }, []);
 
-  const defaultMessage = `Olá, sou da OdontoClarc! Estou aqui para agendar sua consulta.`;
+  const buscarPreAgendamentos = async () => {
+    try {
+      const response = await axios.get('http://localhost:5010/preAvaliacao/'); 
+      setPreAgendamentos(response.data); 
+    } catch (error) {
+      console.error("Erro ao buscar pré-agendamentos:", error);
+    }
+  };
 
   return (
     <div className="preAgenda">
@@ -35,32 +36,28 @@ export default function PreAgenda() {
           <thead>
             <tr>
               <th>Nome</th>
+              <th>Sobrenome</th>
+              <th>Email</th>
               <th>Telefone</th>
-              <th>Horário</th>
-              <th>Data</th>
+              <th>Data de Nascimento</th>
+              <th>Mensagem</th>
             </tr>
           </thead>
           <tbody>
-            {agendamentos.length > 0 ? (
-              agendamentos.map((agendamento, index) => (
-                <tr key={index}>
-                  <td>{agendamento.nome}</td>
-                  <td className='telefone'>
-                    <a
-                      href={`https://wa.me/${agendamento.telefone}?text=${encodeURIComponent(defaultMessage)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {agendamento.telefone}
-                    </a>
-                  </td>
-                  <td>{agendamento.horario}</td>
-                  <td>{agendamento.data}</td>
+            {preAgendamentos.length > 0 ? (
+              preAgendamentos.map((preAgendamento) => (
+                <tr key={preAgendamento.Id_PreAvaliacao}>
+                  <td>{preAgendamento.Nome}</td>
+                  <td>{preAgendamento.Sobrenome}</td>
+                  <td>{preAgendamento.Email}</td>
+                  <td>{preAgendamento.Telefone}</td>
+                  <td>{preAgendamento.Data_Nascimento}</td>
+                  <td>{preAgendamento.Mensagem}</td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="4">Nenhum agendamento disponível</td>
+                <td colSpan="7">Nenhum pré-agendamento disponível</td>
               </tr>
             )}
           </tbody>
