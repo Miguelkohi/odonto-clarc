@@ -8,30 +8,28 @@ import axios from 'axios';
 import './index.scss';
 
 export default function Contato() {
-  const [nome, setNome] = useState("");
-  const [sobrenome, setSobrenome] = useState("");
-  const [email, setEmail] = useState("");
-  const [data, setData] = useState("");
-  const [telefone, setTelefone] = useState("");
-  const [mensagem, setMensagem] = useState("");
+  const [Nome, setNome] = useState("");
+  const [Sobrenome, setSobrenome] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Data_Consulta, setData_Consulta] = useState("");
+  const [Telefone, setTelefone] = useState("");
+  const [Mensagem, setMensagem] = useState("");
   const [erro, setErro] = useState('');
 
   const navigate = useNavigate();
 
   async function enviar() {
     const paramUser = {
-      nome,
-      sobrenome,
-      email,
-      data_Nascimento: data,
-      telefone,
-      mensaagem: mensagem  // Nome correto da coluna
+      Nome,
+      Sobrenome,
+      Email,
+      Telefone,
+      Data_Consulta,
+      Mensagem 
     };
 
-    console.log("Dados enviados:", paramUser);  // Log para debug
-
     try {
-      const url = `http://localhost:5010/preAvaliacao/`;
+      const url = `http://localhost:5020/PreAvaliacao/`;
       const resp = await axios.post(url, paramUser);
 
       if (resp.data.erro) {
@@ -42,7 +40,7 @@ export default function Contato() {
       }
     } catch (error) {
       console.error("Erro ao enviar:", error);
-      setErro('Ocorreu um erro ao enviar o formulário. Tente novamente.');
+      setErro('Ocorreu um erro ao enviar o formulÃ¡rio. Tente novamente.');
     }
   }
 
@@ -61,24 +59,24 @@ export default function Contato() {
       <div className="fundo">
         <div className="esq">
           <input type="text" className="text" placeholder="Nome" 
-            value={nome} onChange={(e) => setNome(e.target.value)} />
+            value={Nome} onChange={(e) => setNome(e.target.value)} />
           <input type="text" className="text" placeholder="Sobrenome" 
-            value={sobrenome} onChange={(e) => setSobrenome(e.target.value)} />
+            value={Sobrenome} onChange={(e) => setSobrenome(e.target.value)} />
           <input type="text" className="text" placeholder="E-mail" 
-            value={email} onChange={(e) => setEmail(e.target.value)} />
+            value={Email} onChange={(e) => setEmail(e.target.value)} />
           <input type="text" className="text" placeholder="Telefone" 
-            value={telefone} onChange={(e) => setTelefone(e.target.value)} />
+            value={Telefone} onChange={(e) => setTelefone(e.target.value)} />
 
           <input
             type="date"
             className="date"
             min={minDate}
             id="dateInput"
-            value={data} onChange={(e) => setData(e.target.value)}
+            value={Data_Consulta} onChange={(e) => setData_Consulta(e.target.value)}
           />
 
           <textarea className="msg" placeholder="Deixe sua mensagem (opcional)" rows="4"
-            value={mensagem} onChange={(e) => setMensagem(e.target.value)}></textarea>
+            value={Mensagem} onChange={(e) => setMensagem(e.target.value)}></textarea>
 
           <button type="button" className='enviar' onClick={enviar}>Enviar</button>
           {erro && <p className="erro">{erro}</p>}

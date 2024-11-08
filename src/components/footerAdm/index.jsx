@@ -2,10 +2,6 @@ import React from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
 
-import { FaInstagram } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaTiktok } from "react-icons/fa6";
 import { MdLocationPin } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 

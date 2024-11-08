@@ -2,10 +2,8 @@ import React from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
 
-import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
-import { MdLocationPin } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { BsInstagram } from "react-icons/bs";
@@ -18,7 +16,9 @@ export default function Footer(){
     <div className="footer">
       <div className="content">
         <div className="esq">
+          <Link to='/'>
           <img src="/assets/images/odc-branca.png" alt="" />
+          </Link>
           <div className='social'>
             <a href="" className="social-icon"><BsInstagram /></a>
             <a href="" className="social-icon"><FaFacebookF /></a>
