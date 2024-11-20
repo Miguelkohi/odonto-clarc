@@ -1,4 +1,4 @@
-import Cabecalho from '../../components/cabecalho';
+import Cabecalho from '../../components/cabecalho/index.jsx';
 import './index.scss';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/footer/index.jsx';
@@ -10,7 +10,7 @@ export default function PreConsulta() {
       <Cabecalho></Cabecalho>
       <div className='conteudo'>
         <img src="/assets/images/odc-min.png" alt="" />
-        <h1>Seu Pre Cadastro foi realizado com sucesso!</h1>
+        <h1>Sua consulta foi marcada com sucesso!</h1>
         <h2>Em breve entraremos em contato para agendar sua consulta.</h2>
         <Link to="/">
           <button className='enviar'>Voltar para a página inicial</button>
