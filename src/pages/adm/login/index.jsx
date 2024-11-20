@@ -21,7 +21,7 @@ export default function Login_ADM() {
       "Senha": Senha
     }
 
-    const url = `http://localhost:5010/entrar/`;
+    const url = `http://localhost:5020/entrar/`;
     let resp = await axios.post(url, paramUser);
 
     if(resp.data.erro != undefined){
