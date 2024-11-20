@@ -39,8 +39,6 @@ export default function PreAgenda() {
               <th>Sobrenome</th>
               <th>Email</th>
               <th>Telefone</th>
-              <th>Data de Nascimento</th>
-              <th>Mensagem</th>
             </tr>
           </thead>
           <tbody>
@@ -51,13 +49,11 @@ export default function PreAgenda() {
                   <td>{preAgendamento.Sobrenome}</td>
                   <td>{preAgendamento.Email}</td>
                   <td>{preAgendamento.Telefone}</td>
-                  <td>{preAgendamento.Data_Nascimento}</td>
-                  <td>{preAgendamento.Mensagem}</td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="7">Nenhum pré-agendamento disponível</td>
+                <td colSpan="4">Nenhum pré-agendamento disponível</td>
               </tr>
             )}
           </tbody>
