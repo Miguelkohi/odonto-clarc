@@ -1,0 +1,24 @@
+.Pre{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .conteudo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img{
+            width: 250px;
+        }
+        padding: 100px;
+        h1{
+            padding: 15px;
+        }
+        h2{
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .enviar{
+            width: 20vw;
+        }
+    }
+}
