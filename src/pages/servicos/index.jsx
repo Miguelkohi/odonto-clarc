@@ -3,6 +3,7 @@ import './index.scss';
 import Cabecalho from '../../components/cabecalho';
 import Footer from '../../components/footer';
 import Zap from '../../components/whatsapp/index.jsx';
+import { Link } from 'react-router-dom';
 
 const servicos = [
   {
@@ -59,8 +60,12 @@ export default function Servicos() {
             </div>
           ))}
         </div>
+        <div className="agendar">
+          <h2>Agende sua consulta!</h2>
+          <Link to='' className='agende'>Agende sua Consulta</Link>
+        </div>
       </div>
-      <Footer />
+     <Footer />
       <Zap />
     </div>
   );
