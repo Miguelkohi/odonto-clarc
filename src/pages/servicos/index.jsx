@@ -61,7 +61,6 @@ export default function Servicos() {
           ))}
         </div>
         <div className="agendar">
-          <h2>Agende sua consulta!</h2>
           <Link to='' className='agende'>Agende sua Consulta</Link>
         </div>
       </div>
