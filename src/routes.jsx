@@ -13,6 +13,7 @@ import PreAgenda from './pages/adm/preAgenda';
 import Agenda from './pages/adm/agenda';
 import Consulta from './pages/adm/consulta';
 import PreAvaliacao from './pages/preAvaliacao';
+import PreCons from './pages/preCons';
 
 
 export default function Rotas() {
@@ -27,6 +28,7 @@ export default function Rotas() {
         <Route path='/contato' element={<Contato />} />
         <Route path='/avaliacao' element={<PreAvaliacao />} />
         <Route path='/consulta' element={<PreConsulta />} />
+        <Route path='/preCons' element={<PreCons />} />
 
         {/* ADM */}
 

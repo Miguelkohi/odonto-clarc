@@ -10,7 +10,7 @@ export default function PreAvaliacao () {
       <Cabecalho></Cabecalho>
       <div className='conteudo'>
         <img src="/assets/images/odc-min.png" alt="" />
-        <h1>Sua pré-avaliação foi realizado com sucesso!</h1>
+        <h1>Sua consulta foi agendada com sucesso!</h1>
         <h2>Em breve entraremos em contato para agendar sua consulta.</h2>
         <Link to="/">
           <button className='enviar'>Voltar para a página inicial</button>

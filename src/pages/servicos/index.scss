@@ -24,7 +24,15 @@
       margin-bottom: 25px;
       grid-template-columns: repeat(3, 1fr);
 
-      .container {
+      .container,
+      .container2,
+      .container3,
+      .container4,
+      .container5,
+      .container6,
+      .container7,
+      .container8,
+      .container9 {
         background-color: #ffffff;
         padding: 70px;
         text-align: center;
@@ -42,8 +50,8 @@
   }
 }
 
-.botao{ 
-  margin-bottom: 6rem ;
+.botao { 
+  margin-bottom: 6rem;
 
   .buton-please {
     background-color: #02445c;
@@ -56,8 +64,6 @@
     margin-left: 75%;
     text-align: right;
   
-  
-   
     &:hover {
       background-color: #197799;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -65,22 +71,21 @@
   }
 }
 
-
 @media (max-width:1440px) {
   .Servicos {
-      width: 100%;
+    width: 100%;
   }
 }
 
 @media (max-width:1280px) {
   .Servicos {
-      width: 100%;
+    width: 100%;
   }
 }
 
 @media (max-width:1024px) {
   .Servicos {
-      width: 100%;
+    width: 100%;
   }
 }
 
@@ -99,73 +104,83 @@
 @media (max-width:540px) {
   .Servicos {
     width: 100%;
-    .itens{
-      .lista{
-        .container{
+    
+    .itens {
+      .lista {
+        .container,
+        .container2,
+        .container3,
+        .container4,
+        .container5,
+        .container6,
+        .container7,
+        .container8,
+        .container9 {
           width: 100px;
-          h2{
+          h2 {
             font-size: 13px;
           }
-          .texto{
+
+          .texto {
             display: none;
           }
         }
       }
     }
-}
+  }
 }
 
 @media (max-width:430px) {
   .Servicos {
     width: 100%;
-    .itens{
-      .lista{
-        .container{
-          
-        }
-      }
-    }
+  }
 }
-}
-
 
 @media (max-width:375px) {
   .Servicos {
-      width: 100%;
+    width: 100%;
   }
 }
 
 .itens {
-
-  .container, .container2, .container3, .container4, .container5, .container6, .container7, .container8, .container9{
+  .container, .container2, .container3, .container4, .container5, .container6, .container7, .container8, .container9 {
     position: relative;
     cursor: pointer;
     transition: 0.5s;
   }
 
-  .imagem1, .imagem2, .imagem3, .imagem4, .imagem5, .imagem6, .imagem7,.imagem8, .imagem9{
-    display: none; 
+  .imagem1, .imagem2, .imagem3, .imagem4, .imagem5, .imagem6, .imagem7, .imagem8, .imagem9 {
+    display: none;
     max-width: 200px;
-  } 
+  }
 
-  .texto1, .texto2, .texto3, .texto4, .texto5, .texto6, .texto7, .texto8, .texto9{
+  .texto1, .texto2, .texto3, .texto4, .texto5, .texto6, .texto7, .texto8, .texto9 {
     color: #02445c;
     font-family: Lato;
-    display: none; 
+    display: none;
     font-size: 15px;
     text-align: left;
-  }   
+  }
 
-  .container:hover .imagem1,.container:hover .texto1,  
-  .container2:hover .imagem2,.container2:hover .texto2,
-  .container3:hover .imagem3,.container3:hover .texto3,
-  .container4:hover .imagem4,.container4:hover .texto4,  
-  .container5:hover .imagem5,.container5:hover .texto5,
-  .container6:hover .imagem6,.container6:hover .texto6,
-  .container7:hover .imagem7,.container7:hover .texto7,  
-  .container8:hover .imagem8,.container8:hover .texto8,
-  .container9:hover .imagem9,.container9:hover .texto9{
-    display: block; 
+  .container:hover .imagem1,
+  .container:hover .texto1,
+  .container2:hover .imagem2,
+  .container2:hover .texto2,
+  .container3:hover .imagem3,
+  .container3:hover .texto3,
+  .container4:hover .imagem4,
+  .container4:hover .texto4,
+  .container5:hover .imagem5,
+  .container5:hover .texto5,
+  .container6:hover .imagem6,
+  .container6:hover .texto6,
+  .container7:hover .imagem7,
+  .container7:hover .texto7,
+  .container8:hover .imagem8,
+  .container8:hover .texto8,
+  .container9:hover .imagem9,
+  .container9:hover .texto9 {
+    display: block;
     transition: 0.5s;
   }
 }

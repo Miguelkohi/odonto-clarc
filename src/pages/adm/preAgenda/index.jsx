@@ -8,6 +8,8 @@ import axios from 'axios';
 
 export default function PreAgenda() {
   const [preAgendamentos, setPreAgendamentos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     buscarPreAgendamentos();
@@ -18,7 +20,10 @@ export default function PreAgenda() {
       const response = await axios.get('http://localhost:5020/preAvaliacao/');
       setPreAgendamentos(response.data);
     } catch (error) {
+      setError('Erro ao buscar pré-agendamentos');
       console.error("Erro ao buscar pré-agendamentos:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -32,40 +37,47 @@ export default function PreAgenda() {
       </button>
       <div className="fundo">
         <h2>Pré-Agendamentos</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Sobrenome</th>
-              <th>Email</th>
-              <th>Telefone</th>
-              <th>Data_Consulta</th>
-              <th>Mensagem</th>
-            </tr>
-          </thead>
-          <tbody>
-            {preAgendamentos.length > 0 ? (
-              preAgendamentos.map((preAgendamento) => (
-                <tr key={preAgendamento.Id_PreAvaliacao}>
-                  <td data-label="Nome">{preAgendamento.Nome}</td>
-                  <td data-label="Sobrenome">{preAgendamento.Sobrenome}</td>
-                  <td data-label="Email">{preAgendamento.Email}</td>
-                  <td data-label="Telefone">{preAgendamento.Celular}</td>
-                  <td data-label="Data_Consulta">
-                    {new Date(preAgendamento.Date).toLocaleDateString('pt-BR')}
-                  </td>
-                  <td data-label="Mensagem">{preAgendamento.Text}</td>
-                </tr>
-              ))
-            ) : (
+        {loading ? (
+          <p>Carregando...</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : (
+          <table>
+            <thead>
               <tr>
-                <td colSpan="4">Nenhum pré-agendamento disponível</td>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Data_Consulta</th>
+                <th>Mensagem</th>
               </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {preAgendamentos.length > 0 ? (
+                preAgendamentos.map((preAgendamento) => (
+                  <tr key={preAgendamento.Id_PreAvaliacao}>
+                    <td data-label="Nome">{preAgendamento.Nome || 'N/A'}</td>
+                    <td data-label="Sobrenome">{preAgendamento.Sobrenome || 'N/A'}</td>
+                    <td data-label="Email">{preAgendamento.Email || 'N/A'}</td>
+                    <td data-label="Telefone">{preAgendamento.Celular || 'N/A'}</td>
+                    <td data-label="Data_Consulta">
+                      {preAgendamento.Date
+                        ? new Date(preAgendamento.Date).toLocaleDateString('pt-BR')
+                        : 'Data não disponível'}
+                    </td>
+                    <td data-label="Mensagem">{preAgendamento.Text || 'Sem mensagem'}</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="6">Nenhum pré-agendamento disponível</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        )}
       </div>
-
       <FooterADM />
     </div>
   );

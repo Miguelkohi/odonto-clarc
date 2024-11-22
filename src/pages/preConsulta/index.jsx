@@ -35,7 +35,7 @@ export default function Consulta() {
                 alert(resp.data.erro);
             } else {
                 localStorage.setItem('USUARIO', resp.data.token);
-                navigate('/consulta');
+                navigate('/preCons');
             }
         } catch (error) {
             console.error("Erro ao enviar:", error);
@@ -52,7 +52,7 @@ export default function Consulta() {
     return (
         <div className="Consulta">
             <Cabecalho />
-            <Link to="/">
+            <Link to="/servicos">
                 <button type="button" className='voltar'><IoChevronBackOutline />Voltar</button>
             </Link>
             <div className="fundo">
