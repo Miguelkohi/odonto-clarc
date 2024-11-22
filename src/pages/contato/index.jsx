@@ -37,13 +37,14 @@ export default function Contato() {
 
     setLoading(true);
     try {
-      const url = `http://localhost:5010/preAvaliacao/`; // A URL da API permanece a mesma
+      const url = `http://localhost:5020/preAvaliacao/`; // A URL da API permanece a mesma
       const resp = await axios.post(url, paramUser);
 
       if (resp.data.erro) {
         setErro(resp.data.erro);
       } else {
         localStorage.setItem('USUARIO', resp.data.token);
+        navigate('/avaliacao');
         navigate('/avaliacao');
       }
     } catch (error) {
