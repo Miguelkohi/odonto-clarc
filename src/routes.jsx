@@ -11,7 +11,8 @@ import Login from './pages/adm/login';
 import Painel from './pages/adm/painel';
 import PreAgenda from './pages/adm/preAgenda';  
 import Agenda from './pages/adm/agenda';
-
+import Consulta from './pages/adm/consulta';
+import PreAvaliacao from './pages/preAvaliacao';
 
 
 export default function Rotas() {
@@ -24,7 +25,8 @@ export default function Rotas() {
         <Route path='/servicotal' element={<Individual />} />
         <Route path='/quemsomos' element={<QuemSomos />} />
         <Route path='/contato' element={<Contato />} />
-        <Route path='/pre' element={<PreConsulta />} />
+        <Route path='/avaliacao' element={<PreAvaliacao />} />
+        <Route path='/consulta' element={<PreConsulta />} />
 
         {/* ADM */}
 
@@ -32,6 +34,8 @@ export default function Rotas() {
         <Route path='/adm-painel' element={<Painel />} />
         <Route path='/adm-preagendamentos' element={<PreAgenda />} /> 
         <Route path='/adm-agenda' element={<Agenda />} />
+        <Route path='/adm-consulta' element={<Consulta />} />
+        <Route path='/adm-avaliacao' element={<Consulta />} />
       </Routes>
     </Router>
   );

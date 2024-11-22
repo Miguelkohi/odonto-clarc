@@ -18,26 +18,20 @@
 
     .lista {
       display: grid;
-      grid-gap: 30px;
-      grid-template-columns: repeat(auto-fit, 300px);
-      justify-content: center;
-      justify-items: center;
-      padding: 6px;
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 25px;
+      grid-template-columns: repeat(3, 1fr);
 
       .container, .container2, .container3, .container4, .container5, .container6, .container7, .container8, .container9 {
         background-color: #ffffff;
         padding: 70px;
-        width: 25vw;
         text-align: center;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         cursor: pointer;
         transition: background-color 0.5s, color 0.5s, transform 0.2s;
-        h3{
-          color: #02445c;
-          text-align: center;
-          padding-top: 10px;
-        }
 
         &:hover {
           background-color: #dddddd;
@@ -47,6 +41,30 @@
     }
   }
 }
+
+.botao{ 
+  margin-bottom: 6rem ;
+
+  .buton-please {
+    background-color: #02445c;
+    border: none;
+    color: #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    padding: 32px;
+    transition: 0.4s;
+    margin-left: 75%;
+    text-align: right;
+  
+  
+   
+    &:hover {
+      background-color: #197799;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
 
 @media (max-width:1440px) {
   .Servicos {
@@ -69,6 +87,12 @@
 @media (max-width:912px) {
   .Servicos {
     width: 100%;
+
+    .itens {
+      .lista {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
 }
 
@@ -97,7 +121,13 @@
     position: relative;
     cursor: pointer;
     transition: 0.5s;
+  }
+
+  .imagem1, .imagem2, .imagem3, .imagem4, .imagem5, .imagem6, .imagem7,.imagem8, .imagem9{
+    display: none; 
+    max-width: 200px;
   } 
+
   .texto1, .texto2, .texto3, .texto4, .texto5, .texto6, .texto7, .texto8, .texto9{
     color: #02445c;
     font-family: Lato;
@@ -106,15 +136,15 @@
     text-align: left;
   }   
 
-  .container:hover, .container:hover .texto1,  
-  .container2:hover, .container2:hover .texto2,
-  .container3:hover, .container3:hover .texto3,
-  .container4:hover, .container4:hover .texto4,  
-  .container5:hover, .container5:hover .texto5,
-  .container6:hover, .container6:hover .texto6,
-  .container7:hover, .container7:hover .texto7,  
-  .container8:hover, .container8:hover .texto8,
-  .container9:hover, .container9:hover .texto9{
+  .container:hover .imagem1,.container:hover .texto1,  
+  .container2:hover .imagem2,.container2:hover .texto2,
+  .container3:hover .imagem3,.container3:hover .texto3,
+  .container4:hover .imagem4,.container4:hover .texto4,  
+  .container5:hover .imagem5,.container5:hover .texto5,
+  .container6:hover .imagem6,.container6:hover .texto6,
+  .container7:hover .imagem7,.container7:hover .texto7,  
+  .container8:hover .imagem8,.container8:hover .texto8,
+  .container9:hover .imagem9,.container9:hover .texto9{
     display: block; 
     transition: 0.5s;
   }

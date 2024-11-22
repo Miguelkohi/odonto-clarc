@@ -1,0 +1,288 @@
+.Consulta {
+    a{
+        text-decoration: none;
+    }
+    .voltar {
+        display: flex;
+        text-decoration: none;
+        background-color: #71919C;
+        border: none;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 25px;
+        margin-top: 20px;
+        margin-left: 40px;
+        padding: 15px;
+        align-items: center;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+        font-weight: bold;
+        cursor: pointer;
+    
+        transition: 0.5s;
+    
+        &:hover {
+          background-color: #66828b;
+          transition: background-color 0.5s, color 0.5s, transform 0.5s;
+          transform: scale(1.05);
+        }
+      }
+  
+    .fundo {
+        background-color: #eeeeee;
+        margin: 60px auto;
+        border-radius: 30px;
+        display: flex;
+        height: 580px;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+  
+  
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  
+        .esq {
+            display: flex;
+            flex-direction: column;
+  
+            justify-content: center;
+            width: 100%;
+            padding: 60px;
+  
+            select {
+                color:#6d6a6a;
+                padding: 10px;
+                border: 1px solid #ffffff;
+                border-radius: 50px;
+                width: 100%;
+                box-sizing: border-box; 
+                appearance: none; 
+                background-color: white;
+                background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"%3E%3Cpolygon points="0,0 20,0 10,10" fill="%23ccc"/%3E%3C/svg%3E');
+                background-repeat: no-repeat;
+                background-position: right 10px center; 
+                background-size: 10px; 
+            }
+            
+            select:focus {
+                outline: none; 
+                border-color: #66afe9;
+            }
+  
+            input {
+                width: 100%;
+                max-width: 400px;
+                padding: 15px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: none;
+                outline: none;
+                border-radius: 25px;
+                transition: box-shadow 0.3s ease;
+                cursor: auto;
+  
+                
+  
+                .date {
+                    cursor: pointer;
+                }
+  
+                &:focus {
+                    box-shadow: inset 0 -5px 5px rgba(221, 219, 219, 0.5), inset 0 5px 5px rgba(0, 0, 0, 0.1);
+                }
+            }
+  
+            .msg {
+                width: 100%;
+                max-width: 400px;
+                padding: 15px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border: none;
+                outline: none;
+                border-radius: 25px;
+                transition: box-shadow 0.3s ease;
+                cursor: auto;
+                height: 120px;
+  
+                resize: none;
+  
+                &:focus {
+                    box-shadow: inset 0 -5px 5px rgba(255, 255, 255, 0.5), inset 0 5px 5px rgba(0, 0, 0, 0.1);
+                }
+            }
+  
+  
+  
+            .enviar {
+                border: none;
+                color: #fff;
+                align-items: center;
+                justify-content: center;
+                margin-top: 22px;
+                background-color: #02445c;
+                border-radius: 25px;
+                padding: 20px;
+                width: 100px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.5s;
+  
+                &:hover {
+                    background-color: #033648;
+                    transition: background-color 0.5s, color 0.5s, transform 0.5s;
+                    transform: scale(1.05);
+                }
+            }
+        }
+  
+        .dir {
+            img {
+                width: 400px;
+                margin-right: 70px;
+            }
+        }
+    }
+  }
+  
+  @media (max-width:1440px) {
+    .Consulta {
+        width: 100%;
+  
+    }
+  }
+  
+  @media (max-width:1280px) {
+    .Consulta {
+        width: 100%;
+  
+        .fundo {
+            .dir {
+                img {
+                    width: 300px;
+                }
+            }
+        }
+    }
+  }
+  
+  @media (max-width:1024px) {
+    .Consulta {
+        width: 100%;
+  
+        .fundo {
+            height: 500px;
+  
+            .esq {
+                input {
+                    padding: 10px;
+                }
+                height: 400px;
+                .msg{
+                    height: 400px;
+                }
+                .date {
+                  color: gray;
+                  padding: 10px;
+                  border: 1px solid #ffffff;
+                  border-radius: 40px;
+                  width: 100%;
+                  box-sizing: border-box; 
+              }
+              
+              select {
+                  color: #fff;
+                  padding: 10px;
+                  border: 1px solid #ffffff;
+                  border-radius: 50px;
+                  width: 100%;
+                  box-sizing: border-box; 
+                  appearance: none; 
+                  background-color: white;
+                  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"%3E%3Cpolygon points="0,0 20,0 10,10" fill="%23ccc"/%3E%3C/svg%3E'); /* Adiciona uma seta para baixo */
+                  background-repeat: no-repeat;
+                  background-position: right 10px center; 
+                  background-size: 10px; 
+              }
+              
+              select:focus {
+                  outline: none; 
+                  border-color: #66afe9;
+              }
+            }
+  
+            .dir {
+                img {
+                    width: 250px;
+                }
+            }
+  
+        }
+    }
+  }
+  
+  @media (max-width:912px) {
+    .Consulta {
+        width: 100%;
+  
+        .fundo {
+            height: 450px;
+  
+            .esq {
+                align-items: center;
+                justify-content: center;
+  
+                .input-data {
+                    width: 100%;
+                    align-items: center;
+                    justify-content: center;
+                }
+  
+                input {
+                    width: 100%;
+                }
+  
+                .enviar {
+                    margin-top: 20px;
+  
+                }
+            }
+  
+            .dir {
+                display: none;
+            }
+        }
+    }
+  }
+  
+  @media (max-width:540px) {
+    .Consulta {
+        width: 100%;
+  
+        .fundo {
+  
+            .esq {
+                padding: 40px;
+  
+                .enviar {
+                    margin-top: 20px;
+                    padding: 15px;
+                }
+            }
+        }
+    }
+  }
+  
+  @media (max-width:430px) {
+    .Consulta {
+        width: 100%;
+    }
+  }
+  
+  
+  @media (max-width:375px) {
+    .Consulta {
+        width: 100%;
+    }
+  }

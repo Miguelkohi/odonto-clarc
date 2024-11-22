@@ -23,11 +23,11 @@
         <Link to="/adm-login">
           <button type="button" className='voltar'><IoChevronBackOutline />Log Out</button>
         </Link>
-        <h1 className='Nome'>Olá, --Nome Funcionário--!</h1> 
+        <h1 className='Nome'>Painel do administrador!</h1> 
         <div className="fundo"> 
-          <h1>Painel Administrativo</h1> 
+          <h1>Minha agenda</h1> 
           <Link to='/adm-preagendamentos'><button type='button' className='botao'>Gerenciar Pré-agendamentos</button></Link>
-          <Link to='/adm-agenda'><button type='button' className='botao'>Gerenciar Agenda</button></Link>
+          <Link to='/adm-agenda'><button type='button' className='botao'>Gerenciar Consultas</button></Link>
         </div>
         <FooterADM />
       </div>

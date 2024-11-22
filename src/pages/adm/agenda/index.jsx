@@ -4,78 +4,59 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import FooterADM from '../../../components/footerAdm/index.jsx';
 import { IoChevronBackOutline } from "react-icons/io5";
-
-const agendamentos = [
-  { nome: "João Silva", telefone: "5512345678", horario: "16:00", data: "2024-11-01" },
-  { nome: "Maria Oliveira", telefone: "5511914817025", horario: "11:00", data: "2024-10-31" },
-  { nome: "Pedro Santos", telefone: "5545678901", horario: "14:00", data: "2024-10-31" },
-];
+import axios from 'axios';
 
 export default function PreAgenda() {
-  const [minDate, setMinDate] = useState('');
-  const [selectedDate, setSelectedDate] = useState('');
+  const [preAgendamentos, setPreAgendamentos] = useState([]);
 
   useEffect(() => {
-    const today = new Date().toISOString().split('T')[0];
-    setMinDate(today);
+    buscarPreAgendamentos();
   }, []);
 
-  const filteredAgendamentos = agendamentos.filter(
-    (agendamento) => agendamento.data === selectedDate
-  );
-
-  const defaultMessage = `Olá, gostaria de confirmar o seu agendamento para o dia ${selectedDate}.`;
+  const buscarPreAgendamentos = async () => {
+    try {
+      
+      const response = await axios.get('http://localhost:5020/Consultas');
+      setPreAgendamentos(response.data); 
+    } catch (error) {
+      console.error("Erro ao buscar consultas:", error);
+    }
+  };
 
   return (
-    <div className="agenda">
+    <div className="preAgenda">
       <Cabecalho_ADM />
-      <Link to="/adm-painel">
-      <button type="button" className='voltar'>
-        <IoChevronBackOutline />Voltar
+      <button type="button" className="voltar">
+        <Link to="/adm-painel">
+          <IoChevronBackOutline /> Voltar
+        </Link>
       </button>
-      </Link>
       <div className="fundo">
-        <h2>Consultas Marcadas</h2>
-        <input
-          type="date"
-          className="data"
-          min={minDate}
-          value={selectedDate}
-          onChange={(e) => setSelectedDate(e.target.value)}
-        />
-        <button className="adicionar-agendamento">
-          <Link to="/adm/adicionar-agendamento">Adicionar Agendamento</Link>
-        </button>
+        <h2>Calendarização</h2>
         <table>
           <thead>
             <tr>
               <th>Nome</th>
               <th>Telefone</th>
-              <th>Horário</th>
-              <th>Agendamento</th>
+              <th>Data da Consulta</th>
+              <th>Hora</th>
+              <th>Serviço</th>
             </tr>
           </thead>
           <tbody>
-            {filteredAgendamentos.length > 0 ? (
-              filteredAgendamentos.map((agendamento, index) => (
-                <tr key={index}>
-                  <td>{agendamento.nome}</td>
-                  <td className="telefone">
-                    <a
-                      href={`https://wa.me/${agendamento.telefone}?text=${encodeURIComponent(defaultMessage)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {agendamento.telefone}
-                    </a>
-                  </td>
-                  <td>{agendamento.horario}</td>
-                  <td>{agendamento.data}</td>
+            {preAgendamentos.length > 0 ? (
+              preAgendamentos.map((preAgendamento) => (
+                <tr key={preAgendamento.id}>
+                  <td>{preAgendamento.nome}</td>
+                  <td>{preAgendamento.telefone}</td>
+                  <td>{preAgendamento.date}</td>
+                  <td>{preAgendamento.time}</td>
+                  <td>{preAgendamento.tipos}</td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="4">Nenhum agendamento para a data selecionada</td>
+                <td colSpan="5">Nenhum agendamento encontrado</td>
               </tr>
             )}
           </tbody>

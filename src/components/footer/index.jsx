@@ -20,8 +20,8 @@ export default function Footer(){
           <img src="/assets/images/odc-branca.png" alt="" />
           </Link>
           <div className='social'>
-            <a href="" className="social-icon"><BsInstagram /></a>
-            <a href="" className="social-icon"><FaFacebookF /></a>
+            <a href="https://www.instagram.com/odontoclarc/?igsh=ZGY5Z2lvNnVnOHE4#" className="social-icon"><BsInstagram /></a>
+            <a href="https://www.facebook.com/profile.php?id=61568622767608&mibextid=ZbWKwL" className="social-icon"><FaFacebookF /></a>
             <a href="" className="social-icon"><FaLinkedinIn /></a>
           </div>
           <Link to='/contato'>
@@ -42,9 +42,6 @@ export default function Footer(){
           </li>
           <li>
             <Link to='/quemsomos'>Quem Somos</Link>
-          </li>
-          <li>
-            <Link to='/contato'>Agendar Consulta</Link>
           </li>
           <li>
             

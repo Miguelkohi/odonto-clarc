@@ -1,11 +1,10 @@
-.agenda {
+.preAgenda {
   .voltar {
     display: flex;
     text-decoration: none;
     background-color: #71919C;
     border: none;
     color: #fff;
-    text-decoration: none;
     text-align: center;
     border-radius: 25px;
     margin-top: 20px;
@@ -15,7 +14,6 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     font-weight: bold;
     cursor: pointer;
-
     transition: 0.5s;
 
     &:hover {
@@ -49,17 +47,16 @@
       margin: 10px 0 20px;
       text-align: center;
       transition: background-color 0.3s ease;
-      
+
       a {
         color: white;
         text-decoration: none;
       }
-    
+
       &:hover {
-        background-color: #0e3b4b;
+        background-color: #e40f0f;
       }
     }
-    
 
     h2 {
       margin-bottom: 20px;
@@ -103,32 +100,64 @@
         }
       }
 
-        td {
-          padding: 15px;
-          border-bottom: 1px solid #dddddd;
-          &.telefone a {
-            color: #007bff;
-            font-weight: bold;
-            text-decoration: none;
-            &:hover {
-              text-decoration: underline;
-            }
+      td {
+        padding: 15px;
+        border-bottom: 1px solid #dddddd;
+
+        &.telefone a {
+          color: #007bff;
+          font-weight: bold;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
           }
         }
       }
     }
   }
 
+ 
+  @media (max-width: 540px) {
+    .agenda {
+      width: 100%;
+      font-size: 0.8rem;
+    }
 
-@media (max-width:540px) {
-  .agenda {
-    width: 100%;
-    font-size: 0.8rem;
+    .fundo {
+      width: 100%;
+      padding: 10px;
+    }
+
+    table {
+      font-size: 0.9rem;
+    }
+
+    .voltar {
+      margin-left: 20px;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
   }
-}
 
-@media (max-width:480px) {
-  .agenda {
-    width: 100%;
+  @media (max-width: 480px) {
+    .agenda {
+      width: 100%;
+    }
+
+    .voltar {
+      margin-left: 10px;
+      padding: 8px;
+      font-size: 0.8rem;
+    }
+
+    .fundo {
+      width: 100%;
+      padding: 15px;
+    }
+
+    table {
+      font-size: 0.8rem;
+    }
   }
 }

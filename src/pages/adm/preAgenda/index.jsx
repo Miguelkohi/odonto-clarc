@@ -15,8 +15,8 @@ export default function PreAgenda() {
 
   const buscarPreAgendamentos = async () => {
     try {
-      const response = await axios.get('http://localhost:5010/preAvaliacao/'); 
-      setPreAgendamentos(response.data); 
+      const response = await axios.get('http://localhost:5020/preAvaliacao/');
+      setPreAgendamentos(response.data);
     } catch (error) {
       console.error("Erro ao buscar pré-agendamentos:", error);
     }
@@ -39,7 +39,7 @@ export default function PreAgenda() {
               <th>Sobrenome</th>
               <th>Email</th>
               <th>Telefone</th>
-              <th>Data de Nascimento</th>
+              <th>Data_Consulta</th>
               <th>Mensagem</th>
             </tr>
           </thead>
@@ -47,12 +47,14 @@ export default function PreAgenda() {
             {preAgendamentos.length > 0 ? (
               preAgendamentos.map((preAgendamento) => (
                 <tr key={preAgendamento.Id_PreAvaliacao}>
-                  <td>{preAgendamento.Nome}</td>
-                  <td>{preAgendamento.Sobrenome}</td>
-                  <td>{preAgendamento.Email}</td>
-                  <td>{preAgendamento.Telefone}</td>
-                  <td>{preAgendamento.Data_Nascimento}</td>
-                  <td>{preAgendamento.Mensagem}</td>
+                  <td data-label="Nome">{preAgendamento.Nome}</td>
+                  <td data-label="Sobrenome">{preAgendamento.Sobrenome}</td>
+                  <td data-label="Email">{preAgendamento.Email}</td>
+                  <td data-label="Telefone">{preAgendamento.Celular}</td>
+                  <td data-label="Data_Consulta">
+                    {new Date(preAgendamento.Date).toLocaleDateString('pt-BR')}
+                  </td>
+                  <td data-label="Mensagem">{preAgendamento.Text}</td>
                 </tr>
               ))
             ) : (

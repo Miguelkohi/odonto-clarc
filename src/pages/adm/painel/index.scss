@@ -37,9 +37,9 @@
     margin: 80px auto;
     border-radius: 30px;
     display: flex;
-    height: 40vh;
+    height: 30vh;
     align-items: center;
-    width: 45vw;
+    width: 50vw;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     flex-direction: column;
 
@@ -59,6 +59,7 @@
       }
 
       margin-top: 20px;
+      margin-bottom: -5px;
       padding: 10px;
       width: 30vw;
       transition: background-color 0.2s,
