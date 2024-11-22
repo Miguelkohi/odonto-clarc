@@ -28,7 +28,7 @@ export default function Consulta() {
        
 
         try {
-            const url = `http://localhost:5020/Consultas/`;
+            const url = `http://localhost:5010/Consultas/`;
             const resp = await axios.post(url, consultas);
 
             if (resp.data.erro) {

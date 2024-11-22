@@ -61,7 +61,7 @@ export default function Servicos() {
           ))}
         </div>
         <div className="agendar">
-          <Link to='' className='agende'>Agende sua Consulta</Link>
+          <Link to='/contato' className='agende'>Agende sua Consulta</Link>
         </div>
       </div>
      <Footer />
