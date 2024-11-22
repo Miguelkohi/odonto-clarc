@@ -44,7 +44,7 @@ export default function Footer(){
             <Link to='/quemsomos'>Quem Somos</Link>
           </li>
           <li>
-            <Link to='/contato'>Agendar Consulta</Link>
+            <Link to='/consulta'>Agendar Consulta</Link>
           </li>
           <li>
             

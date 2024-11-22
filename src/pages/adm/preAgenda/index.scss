@@ -61,7 +61,7 @@
     margin: 20px auto;
     border-collapse: collapse;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-
+    overflow-x: auto; 
     thead {
       background-color: #71919C;
       color: #ffffff;
@@ -82,60 +82,76 @@
       }
 
       td {
-        padding: 15px;
+        padding: 10px;
         border-bottom: 1px solid #dddddd;
-        &.telefone a {
-          color: #007bff;
-          font-weight: bold;
-          text-decoration: none;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
       }
     }
   }
-}
-@media (max-width:1440px) {
-  .Contato {
-      width: 100%;
-  }
-}
 
-@media (max-width:1280px) {
-  .Contato {
-      width: 100%;
-  }
-}
+  
+  @media (max-width: 768px) {
+    .fundo {
+      width: 95%; 
+      padding: 15px;
+    }
 
-@media (max-width:1024px) {
-  .Contato {
-      width: 100%;
-  }
-}
+    table {
+      font-size: 0.9rem; 
+    }
 
-@media (max-width:912px) {
-  .Contato {
-      width: 100%;
+    .voltar {
+      margin-left: 20px;
+      padding: 10px;
+    }
   }
-}
 
-@media (max-width:540px) {
-  .preAgenda {
+  @media (max-width: 540px) {
+    .preAgenda {
       width: 100%;
       font-size: 0.8rem;
-  }
-}
+    }
 
-@media (max-width:430px) {
-  .Contato {
+   
+    table {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+
+    td {
+      display: block;
       width: 100%;
+      padding: 8px 0;
+      text-align: left;
+      border: none;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      display: none; 
+    }
+
+    
+    td:before {
+      content: attr(data-label);
+      font-weight: bold;
+      padding-right: 10px;
+    }
   }
-}
 
+  @media (max-width: 375px) {
+    .preAgenda {
+      padding: 10px;
+    }
 
-@media (max-width:375px) {
-  .Contato {
-      width: 100%;
+    td {
+      font-size: 0.75rem; 
+    }
+
+    .voltar {
+      margin-left: 10px;
+      padding: 8px;
+    }
   }
 }

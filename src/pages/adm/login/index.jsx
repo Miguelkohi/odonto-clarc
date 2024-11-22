@@ -28,6 +28,7 @@ export default function Login_ADM() {
     }
 
     const url = `http://localhost:5010/entrar/`;
+    let resp = await axios.post(url, paramUser);
 
     try {
       setLoading(true);

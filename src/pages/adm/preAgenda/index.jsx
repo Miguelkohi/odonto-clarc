@@ -15,8 +15,8 @@ export default function PreAgenda() {
 
   const buscarPreAgendamentos = async () => {
     try {
-      const response = await axios.get('http://localhost:5010/preAvaliacao/'); 
-      setPreAgendamentos(response.data); 
+      const response = await axios.get('http://localhost:5020/preAvaliacao/');
+      setPreAgendamentos(response.data);
     } catch (error) {
       console.error("Erro ao buscar pré-agendamentos:", error);
     }

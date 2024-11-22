@@ -44,12 +44,10 @@ export default function Contato() {
         setErro(resp.data.erro);
       } else {
         localStorage.setItem('USUARIO', resp.data.token);
-        navigate('/pre');
+        navigate('/avaliacao');
       }
     } catch (error) {
-      console.error("Erro ao enviar:", error);
-      setErro('Ocorreu um erro ao enviar o formulário. Tente novamente.');
-    }
+   }
     setLoading(false);
   }
 

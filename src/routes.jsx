@@ -11,8 +11,7 @@ import Login from './pages/adm/login';
 import Painel from './pages/adm/painel';
 import PreAgenda from './pages/adm/preAgenda';  
 import Agenda from './pages/adm/agenda';
-
-
+import Consulta from './pages/preConsulta';
 
 export default function Rotas() {
   return (
@@ -25,6 +24,7 @@ export default function Rotas() {
         <Route path='/quemsomos' element={<QuemSomos />} />
         <Route path='/contato' element={<Contato />} />
         <Route path='/pre' element={<PreConsulta />} />
+        <Route path='/consulta' element={<Consulta />} />
 
         {/* ADM */}
 
