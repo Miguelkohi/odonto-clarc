@@ -59,7 +59,7 @@ export default function PreAgenda() {
               ))
             ) : (
               <tr>
-                <td colSpan="7">Nenhum pré-agendamento disponível</td>
+                <td colSpan="4">Nenhum pré-agendamento disponível</td>
               </tr>
             )}
           </tbody>
